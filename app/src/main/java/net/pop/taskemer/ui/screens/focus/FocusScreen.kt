@@ -141,7 +141,7 @@ fun FocusScreen(
                     fontWeight = FontWeight.Bold
                 )
                 if (!isRunning) {
-                    Text("Ready", color = TaskemerTextSecondary, fontSize = 16.sp)
+                    Text("Ready", color = TaskemerTextSecondary, fontFamily = Rubik, fontSize = 16.sp)
                 }
             }
         }
@@ -184,8 +184,8 @@ fun FocusScreen(
                     )
                     Spacer(modifier = Modifier.width(12.dp))
                     Column {
-                        Text("Do Not Disturb", color = TaskemerTextPrimary, fontWeight = FontWeight.Bold)
-                        Text("Block notifications during focus", color = TaskemerTextSecondary, fontSize = 12.sp)
+                        Text("Do Not Disturb", color = TaskemerTextPrimary, fontFamily = Rubik, fontWeight = FontWeight.Bold)
+                        Text("Block notifications during focus", color = TaskemerTextSecondary, fontFamily = Rubik, fontSize = 12.sp)
                     }
                 }
 
@@ -270,6 +270,7 @@ fun PresetChip(time: Long, onClick: () -> Unit) {
             text = "${time}m",
             color = TaskemerTextPrimary,
             modifier = Modifier.padding(horizontal = 20.dp, vertical = 10.dp),
+            fontFamily = Rubik,
             fontWeight = FontWeight.Bold
         )
     }

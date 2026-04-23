@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Output
+import androidx.compose.material.icons.filled.PestControlRodent
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,7 +31,6 @@ import net.pop.taskemer.ui.theme.Black
 import net.pop.taskemer.ui.theme.Rubik
 import net.pop.taskemer.ui.theme.TaskemerPrimary
 import net.pop.taskemer.ui.theme.TaskemerTextColor
-import net.pop.taskemer.ui.theme.TaskemerTextPrimary
 import net.pop.taskemer.ui.theme.TaskemerTextSecondary
 
 @Composable
@@ -41,7 +41,7 @@ fun TaskemerTopBar(
 ) {
     Row(
         modifier = modifier
-            .height(55.dp)
+            .height(58.dp)
             .fillMaxWidth()
             .shadow(
                 elevation = 16.dp,
@@ -49,21 +49,30 @@ fun TaskemerTopBar(
                 ambientColor = TaskemerPrimary
             )
             .background(Black)
-            .padding(horizontal = 24.dp, vertical = 6.dp),
+            .padding(horizontal = 24.dp, vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
 
-            Spacer(modifier = Modifier.width(24.dp))
+            Spacer(modifier = Modifier.width(16.dp))
 
-            TaskemerLogo(
+//            TaskemerLogo(
+//                modifier = Modifier
+//                    .clip(RoundedCornerShape(16.dp))
+//                    .size(42.dp)
+//                    .background(TaskemerPrimary)
+//                    .padding(2.dp),
+//                color = TaskemerTextPrimary
+//            )
+
+            Icon(
+                imageVector = Icons.Default.PestControlRodent,
+                tint = TaskemerPrimary,
                 modifier = Modifier
                     .clip(RoundedCornerShape(16.dp))
-                    .size(42.dp)
-                    .background(TaskemerPrimary)
-                    .padding(2.dp),
-                color = TaskemerTextPrimary
+                    .size(42.dp),
+                contentDescription = "Person"
             )
 
             Spacer(modifier = Modifier.width(12.dp))
@@ -71,7 +80,7 @@ fun TaskemerTopBar(
             Text(
                 text = "Taskemer",
                 color = TaskemerTextColor,
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 fontFamily = Rubik,
                 fontWeight = FontWeight.Bold
             )
@@ -102,7 +111,7 @@ fun TaskemerTopBar(
                     modifier = Modifier.clickable(true, onClick = logout)
                 )
             }
-            Spacer(modifier = Modifier.width(8.dp))
+            Spacer(modifier = Modifier.width(16.dp))
         }
     }
 }

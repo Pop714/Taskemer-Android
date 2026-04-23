@@ -18,7 +18,8 @@ class AuthRepository @Inject constructor(
             val response = api.login(request)
             if (response.isSuccessful && response.body() != null) {
                 val token = response.body()!!.data.token
-                tokenManager.saveAuthData(token, request.username)
+                val userId = response.body()!!.data.userId
+                tokenManager.saveAuthData(token, request.username, userId)
                 Result.success("Login Successful")
             } else {
                 Result.failure(Exception("Invalid credentials"))
@@ -33,7 +34,8 @@ class AuthRepository @Inject constructor(
             val response = api.register(request)
             if (response.isSuccessful && response.body() != null) {
                 val token = response.body()!!.data.token
-                tokenManager.saveAuthData(token, request.username)
+                val userId = response.body()!!.data.userId
+                tokenManager.saveAuthData(token, request.username, userId)
                 Result.success("Registration Successful")
             } else {
                 Result.failure(Exception("Registration failed. Username may exist."))

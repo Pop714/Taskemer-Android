@@ -2,6 +2,7 @@ package net.pop.taskemer.data.local
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -19,12 +20,14 @@ class TokenManager @Inject constructor(
     companion object {
         private val JWT_TOKEN_KEY = stringPreferencesKey("jwt_token")
         private val USERNAME_KEY = stringPreferencesKey("username")
+        private val USERID_KEY = intPreferencesKey("userId")
     }
 
-    suspend fun saveAuthData(token: String, username: String) {
+    suspend fun saveAuthData(token: String, username: String, userId: Int) {
         context.dataStore.edit { prefs ->
             prefs[JWT_TOKEN_KEY] = token
             prefs[USERNAME_KEY] = username
+            prefs[USERID_KEY] = userId
         }
     }
 
@@ -34,6 +37,10 @@ class TokenManager @Inject constructor(
 
     val usernameFlow: Flow<String?> = context.dataStore.data.map { prefs ->
         prefs[USERNAME_KEY]
+    }
+
+    val userIdFlow: Flow<Int?> = context.dataStore.data.map { prefs ->
+        prefs[USERID_KEY]
     }
 
     suspend fun clearAuthData() {

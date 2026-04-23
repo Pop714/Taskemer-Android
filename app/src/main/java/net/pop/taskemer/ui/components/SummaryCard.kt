@@ -14,6 +14,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import net.pop.taskemer.ui.screens.home.HomeState
+import net.pop.taskemer.ui.theme.Rubik
 import net.pop.taskemer.ui.theme.TaskemerPrimary
 import net.pop.taskemer.ui.theme.TaskemerSurface
 import net.pop.taskemer.ui.theme.TaskemerTextSecondary
@@ -30,6 +31,7 @@ fun SummaryCard(state: HomeState) {
                 text = "You don't have any active projects right now. Time to build something new.",
                 color = TaskemerTextSecondary,
                 fontSize = 14.sp,
+                fontFamily = Rubik,
                 modifier = Modifier.padding(24.dp)
             )
         }
@@ -48,6 +50,7 @@ fun SummaryCard(state: HomeState) {
             },
             color = TaskemerTextSecondary,
             fontSize = 15.sp,
+            fontFamily = Rubik,
             lineHeight = 22.sp
         )
     }

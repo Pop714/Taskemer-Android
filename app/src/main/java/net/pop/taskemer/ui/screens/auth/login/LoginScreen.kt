@@ -6,8 +6,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.PermIdentity
@@ -43,6 +46,7 @@ fun LoginScreen(
     viewModel: LoginViewModel = hiltViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
+    val scrollState = rememberScrollState()
 
     LaunchedEffect(state.loginSuccess) {
         if (state.loginSuccess) {
@@ -54,6 +58,8 @@ fun LoginScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(TaskemerBackground)
+            .verticalScroll(scrollState)
+            .imePadding()
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

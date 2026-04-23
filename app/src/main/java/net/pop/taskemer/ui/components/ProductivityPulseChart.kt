@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import net.pop.taskemer.ui.theme.Rubik
 import net.pop.taskemer.ui.theme.TaskemerPrimary
 import net.pop.taskemer.ui.theme.TaskemerSurface
 import net.pop.taskemer.ui.theme.TaskemerTextPrimary
@@ -43,14 +44,15 @@ fun ProductivityPulseChart() {
                     text = "PRODUCTIVITY\nPULSE",
                     color = TaskemerTextSecondary,
                     fontSize = 11.sp,
+                    fontFamily = Rubik,
                     fontWeight = FontWeight.Bold,
                     letterSpacing = 1.sp,
                     lineHeight = 14.sp
                 )
 
                 Column(horizontalAlignment = Alignment.End) {
-                    Text("84", color = TaskemerTextPrimary, fontSize = 28.sp, fontWeight = FontWeight.Bold)
-                    Text("FOCUS SCORE", color = TaskemerTextSecondary, fontSize = 9.sp, letterSpacing = 1.sp)
+                    Text("84", color = TaskemerTextPrimary, fontSize = 28.sp, fontFamily = Rubik, fontWeight = FontWeight.Bold)
+                    Text("FOCUS SCORE", color = TaskemerTextSecondary, fontSize = 9.sp, fontFamily = Rubik, letterSpacing = 1.sp)
                 }
             }
 

@@ -27,6 +27,7 @@ import net.pop.taskemer.ui.navigation.BottomNavItem
 import net.pop.taskemer.ui.screens.focus.FocusScreen
 import net.pop.taskemer.ui.screens.home.HomeScreen
 import net.pop.taskemer.ui.screens.project.ProjectDetailScreen
+import net.pop.taskemer.ui.screens.project.ProjectsScreen
 import net.pop.taskemer.ui.theme.TaskemerBackground
 import net.pop.taskemer.utils.NetworkConnectivityObserver
 import kotlin.math.roundToInt
@@ -91,7 +92,8 @@ fun MainScreen(
             }
 
             composable(BottomNavItem.Projects.route) {
-                ProjectDetailScreen { }
+//                ProjectDetailScreen { }
+                ProjectsScreen()
             }
 
             composable(BottomNavItem.Focus.route) {
