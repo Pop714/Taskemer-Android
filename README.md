@@ -131,10 +131,3 @@ git clone https://github.com/Pop714/Taskemer-Android/.git
 
 Contributions, issues, and feature requests are welcome.
 Feel free to open a pull request or check the issues page.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-See the LICENSE file for more details.
